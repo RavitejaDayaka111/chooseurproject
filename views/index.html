@@ -54,6 +54,10 @@
       transition: all 0.3s ease;
     }
 
+    .theme-toggle:hover {
+      transform: scale(1.05);
+    }
+
     body.dark-mode .theme-toggle {
       background: #1e293b;
       color: #e2e8f0;
@@ -78,7 +82,7 @@
 
     h1 {
       text-align: center;
-      font-size: 1.9em;
+      font-size: 2em;
       margin-bottom: 30px;
       color: inherit;
     }
@@ -117,13 +121,21 @@
     }
 
     input[type="file"] {
-      display: block;
-      padding: 10px 0;
+      padding: 8px;
+      background: #e0f2fe;
+      border-radius: 10px;
       font-size: 0.95em;
-      color: inherit;
+      color: #1e3a8a;
+      font-weight: 500;
     }
 
-    button[type="submit"] {
+    body.dark-mode input[type="file"] {
+      background: #334155;
+      color: #e2e8f0;
+    }
+
+    button[type="submit"],
+    .reset-btn {
       margin-top: 10px;
       width: 100%;
       background: linear-gradient(to right, #4f46e5, var(--primary));
@@ -137,7 +149,8 @@
       transition: background 0.3s, transform 0.2s;
     }
 
-    button[type="submit"]:hover {
+    button[type="submit"]:hover,
+    .reset-btn:hover {
       background: linear-gradient(to right, #4338ca, #2563eb);
       transform: scale(1.02);
     }
@@ -172,13 +185,12 @@
 </head>
 <body>
   <!-- 🔲 DARK MODE TOGGLE BUTTON -->
-  <button class="theme-toggle" onclick="toggleTheme()">🌗 Toggle Mode</button>
+  <button class="theme-toggle" onclick="toggleTheme()">🌞 Light / 🌙 Dark</button>
 
   <!-- 📤 UPLOAD FORM CARD -->
   <div class="upload-card">
     <h1>📤 Upload Your Project</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
-      
       <div class="form-group">
         <label for="title">📌 Project Title</label>
         <input type="text" name="title" id="title" required>
@@ -214,3 +226,4 @@
   </script>
 </body>
 </html>
+
