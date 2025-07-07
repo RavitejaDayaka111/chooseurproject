@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Uploader</title>
+  <title>Upload Project</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    form { max-width: 400px; margin: auto; }
+    input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 20px; }
+  </style>
 </head>
 <body>
   <h1>Upload Your Project</h1>
   <form action="/upload" method="post" enctype="multipart/form-data">
+    <label>Project Name:</label>
+    <input type="text" name="title" required>
+
+    <label>Description:</label>
+    <textarea name="description" rows="4" required></textarea>
+
+    <label>Project File:</label>
     <input type="file" name="project" required>
+
     <button type="submit">Upload</button>
   </form>
   <br>
